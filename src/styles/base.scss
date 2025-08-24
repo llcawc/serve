@@ -1,0 +1,100 @@
+/* base.css */
+
+:root {
+  --color-text: #2d2e30;
+  --color-header: #000;
+  --color-bg: #fff;
+  --color-accent: #223cd2;
+  --font-default: Inter, system-ui, sans-serif;
+  --space: 0.25rem;
+}
+
+.dark {
+  --color-text: #dee3e9;
+  --color-header: #fff;
+  --color-bg: #202129;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  font-family: var(--font-default);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  margin-block: calc(var(--space) * 5);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-header);
+  margin-bottom: calc(var(--space) * 4);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: calc(var(--space) * 10);
+}
+
+p {
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: calc(var(--space) * 4);
+}
+
+a,
+a:visited {
+  color: var(--color-accent);
+  transition: color 200ms ease-in;
+}
+a:hover {
+  color: #536cfa;
+}
+
+.container {
+  max-width: calc(var(--space) * 200);
+  padding-inline: calc(var(--space) * 2.5);
+  margin-inline: auto;
+}
+
+.btn {
+  appearance: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--color-accent);
+  line-height: 1;
+  font-size: inherit;
+  cursor: pointer;
+  transition: background-color 200ms ease-in;
+  &:hover {
+    background: #2142ff;
+  }
+}
+
+.error {
+  height: calc(100svh - var(--space) * 10);
+  padding-bottom: calc(var(--space) * 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.e404 {
+  display: flex;
+  gap: calc(var(--space) * 6);
+  & h1 {
+    font-size: calc(var(--space) * 12);
+    line-height: 1;
+  }
+}
