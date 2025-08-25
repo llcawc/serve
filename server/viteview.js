@@ -1,12 +1,21 @@
 import { join, resolve } from 'node:path';
 import { preview } from 'vite';
 const __dirname = resolve();
-export default async function server(port = 3000, dist = undefined) {
+export default async function server({ port = 3000, dist = 'dist', host = undefined, }) {
     if (dist) {
         dist = resolve(__dirname, dist);
     }
     else {
         dist = join(__dirname, 'dist');
+    }
+    if (host === undefined) {
+        host = undefined;
+    }
+    else if (host) {
+        host = true;
+    }
+    else {
+        host = false;
     }
     const previewServer = await preview({
         // any valid user config options, plus `mode` and `configFile`
@@ -17,6 +26,7 @@ export default async function server(port = 3000, dist = undefined) {
         preview: {
             port,
             open: false,
+            host,
         },
     });
     // Root log

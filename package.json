@@ -1,6 +1,6 @@
 {
   "name": "@pasmurno/serve",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "bin": {
     "serve": "bin/serve.js"
@@ -22,7 +22,7 @@
     "tsc": "tsc",
     "make": "nodemon -e ts -x tsc -w ./source",
     "dev": "vite",
-    "serve": "npx serve -p 8080",
+    "serve": "npx serve --host -p 8080",
     "build": "vite build"
   },
   "devDependencies": {

@@ -47,16 +47,17 @@ $ npm run serve
 ## Options:
 
 ```
--v, --version output the current version
--p, --port <n> server port number (default: 3000)
--d, --dist [value] folder for serve files (default: dist)
--h, --help display help for command
+-v, --version       output the current version
+-p, --port <n>      server port number (default: 3000)
+-d, --dist [value]  folder for serve files (default: dist)
+-s, --host          listen on all addresses, including LAN and public addresses
+-h, --help          display help for command
 ```
 
 ## Example call:
 
 ```sh
-$ serve -p 4200 -d build
+$ serve -p 4200 -d build --host
 ...
 $ npx serve --port 8000 --dist './static'
 ```
@@ -71,6 +72,7 @@ async function browse() {
   await server({
     port: 8080, // server port number (default: 3000)
     dist: "dist", // folder for serve files (default: dist)
+    host: true, // Set true to listen on all addresses, including LAN and public addresses (default: undefined)
   });
 }
 ```

@@ -2,11 +2,27 @@ import { join, resolve } from 'node:path'
 import { preview } from 'vite'
 const __dirname = resolve()
 
-export default async function server(port: number | undefined = 3000, dist: string | undefined = undefined) {
+export default async function server({
+  port = 3000,
+  dist = 'dist',
+  host = undefined,
+}: {
+  port: number | undefined
+  dist: string | undefined
+  host: string | boolean | undefined
+}) {
   if (dist) {
     dist = resolve(__dirname, dist)
   } else {
     dist = join(__dirname, 'dist')
+  }
+
+  if (host === undefined) {
+    host = undefined
+  } else if (host) {
+    host = true
+  } else {
+    host = false
   }
 
   const previewServer = await preview({
@@ -18,6 +34,7 @@ export default async function server(port: number | undefined = 3000, dist: stri
     preview: {
       port,
       open: false,
+      host,
     },
   })
 

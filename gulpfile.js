@@ -12,6 +12,7 @@ async function serve() {
   await server({
     port: 8080, // server port number (default: 3000)
     dist: 'dist', // folder for serve files (default: dist)
+    host: true, // listen on all addresses, including LAN and public addresses
   })
 }
 
@@ -41,6 +42,7 @@ async function viteServe() {
     preview: {
       port: 3000,
       open: false,
+      host: true,
     },
   })
   // Root log
