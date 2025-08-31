@@ -3,7 +3,7 @@ import { Args } from './types.js'
 import server from './viteview.js'
 const program = new Command()
 
-const header = '\n• Vite based live server for static files\n  @pasmurno/serve v.0.0.3\n'
+const header = '\n• Vite based live server for static files\n  @pasmurno/serve v.0.0.4\n'
 const footer = '\nMIT License ©2025 pasmurno by llcawc. Made with ❤ to beautiful architecture.'
 const example =
   '\nExample call:\n' +
@@ -12,7 +12,7 @@ const example =
   '  • $ npx serve --port 8000 --dist "./static"  // for local use'
 
 program.name('$ serve').usage('[options]')
-program.version('v.0.0.3', '-v, --version', 'output the current version')
+program.version('v.0.0.4', '-v, --version', 'output the current version')
 program.addHelpText('before', header).addHelpText('after', example).addHelpText('afterAll', footer)
 
 program

@@ -1,7 +1,10 @@
 import { join, resolve } from 'node:path';
 import { preview } from 'vite';
 const __dirname = resolve();
-export default async function server({ port = 3000, dist = 'dist', host = undefined, }) {
+export default async function server({ port, dist, host, } = {}) {
+    if (!port) {
+        port = 3000;
+    }
     if (dist) {
         dist = resolve(__dirname, dist);
     }

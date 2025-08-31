@@ -3,14 +3,18 @@ import { preview } from 'vite'
 const __dirname = resolve()
 
 export default async function server({
-  port = 3000,
-  dist = 'dist',
-  host = undefined,
+  port,
+  dist,
+  host,
 }: {
-  port: number | undefined
-  dist: string | undefined
-  host: string | boolean | undefined
-}) {
+  port?: number | undefined
+  dist?: string | undefined
+  host?: string | boolean | undefined
+} = {}) {
+  if (!port) {
+    port = 3000
+  }
+
   if (dist) {
     dist = resolve(__dirname, dist)
   } else {
