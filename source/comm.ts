@@ -1,9 +1,13 @@
 import { Command } from 'commander'
-import { Args } from './types.js'
-import server from './viteview.js'
-const program = new Command()
 
-const header = '\n• Vite based live server for static files\n  @pasmurno/serve v.0.0.4\n'
+import { server } from './server.js'
+
+type Args = { port: number | undefined; dist: string | undefined; host: string | boolean | undefined }
+
+const program = new Command()
+const ver = '0.0.5'
+
+const header = `• @pasmurno/serve • ::.. version: ${ver}\nVite based live server for static files\n`
 const footer = '\nMIT License ©2025 pasmurno by llcawc. Made with ❤ to beautiful architecture.'
 const example =
   '\nExample call:\n' +
@@ -12,7 +16,7 @@ const example =
   '  • $ npx serve --port 8000 --dist "./static"  // for local use'
 
 program.name('$ serve').usage('[options]')
-program.version('v.0.0.4', '-v, --version', 'output the current version')
+program.version(ver, '-v, --version', 'output the current version')
 program.addHelpText('before', header).addHelpText('after', example).addHelpText('afterAll', footer)
 
 program

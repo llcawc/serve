@@ -60,6 +60,12 @@ a:hover {
   color: #536cfa;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--color-text);
+  margin-block: calc(var(--space) * 6);
+}
+
 .container {
   max-width: calc(var(--space) * 200);
   padding-inline: calc(var(--space) * 2.5);

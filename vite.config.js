@@ -1,4 +1,5 @@
 import { join, resolve } from 'path'
+
 import { defineConfig } from 'vite'
 const __dirname = resolve()
 
@@ -15,12 +16,12 @@ export default defineConfig({
     assetsInlineLimit: 0,
     modulePreload: false,
     rollupOptions: {
-      input: ['./src/index.html', './src/404.html', './src/scripts/main.ts'],
+      input: ['./src/index.html', './src/404.html'],
       output: {
         entryFileNames: 'js/[name].js',
         chunkFileNames: 'js/[name].js',
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').pop()
+          let extType = assetInfo.names[0].split('.').pop()
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'images'
           }

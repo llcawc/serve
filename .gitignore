@@ -1,6 +1,9 @@
 # Node & project folders
 /.git/
 /.osp/
+/.gigaide/
+/.idea/
+/.vscode/
 /node_modules/
 /**/debug.log
 /**/yarn.lock

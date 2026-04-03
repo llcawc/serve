@@ -1,12 +1,13 @@
 {
   "name": "@pasmurno/serve",
-  "version": "0.0.4",
-  "type": "module",
+  "version": "0.0.5",
+  "description": "Vite based static server for local development",
+  "homepage": "https://github.com/llcawc/serve",
+  "license": "MIT",
+  "author": "llcawc",
   "bin": {
     "serve": "bin/serve.js"
   },
-  "main": "./server/index.js",
-  "exports": "./server/index.js",
   "files": [
     "bin",
     "server",
@@ -14,29 +15,44 @@
     "LICENSE",
     "README.md"
   ],
-  "author": "llcawc",
-  "license": "MIT",
-  "homepage": "https://github.com/llcawc/serve",
-  "description": "Vite based static server for local development",
-  "scripts": {
-    "tsc": "tsc",
-    "make": "nodemon -e ts -x tsc -w ./source",
-    "dev": "vite",
-    "serve": "npx serve --host -p 8080",
-    "build": "vite build"
+  "type": "module",
+  "main": "./server/server.cjs",
+  "module": "./server/server.js",
+  "types": "./server/server.d.cts",
+  "exports": {
+    ".": {
+      "import": "./server/server.js",
+      "require": "./server/server.cjs"
+    },
+    "./package.json": "./package.json"
   },
-  "devDependencies": {
-    "@types/node": "^24.3.0",
-    "gulp": "^5.0.1",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2",
-    "prettier-plugin-embed": "^0.5.0",
-    "prettier-plugin-organize-imports": "^4.2.0",
-    "sass": "^1.90.0",
-    "typescript": "^5.9.2"
+  "scripts": {
+    "test": "vitest",
+    "lint": "oxlint",
+    "fix": "oxlint --fix",
+    "check": "oxfmt --check",
+    "fmt": "oxfmt",
+    "validate": "oxlint && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "serve": "npx serve --host -p 8080",
+    "tsc": "tsc source/comm.ts --ignoreConfig --outDir server",
+    "dev": "vite",
+    "build": "tsdown -d ./server && pnpm tsc"
   },
   "dependencies": {
-    "commander": "^14.0.0",
-    "vite": "^7.1.3"
+    "commander": "^14.0.3",
+    "vite": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.18",
+    "@types/node": "^25.5.2",
+    "@typescript/native-preview": "7.0.0-dev.20260403.1",
+    "gulp": "^5.0.1",
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0",
+    "sass": "^1.99.0",
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   }
 }

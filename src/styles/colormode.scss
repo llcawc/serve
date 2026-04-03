@@ -1,79 +1,89 @@
-html {
-  --cm-color: #31313e;
-  --cm-bg: #e7e9ef;
+/* color mode switcher */
+:root {
+  --cm-color: #232429;
+  --cm-bg: rgb(240 240 240 / 50%);
+  --cm-bg-hover: rgb(240 240 240 / 90%);
   --cm-focus: transparent;
 }
 
-html.dark {
-  --cm-color: #fff;
-  --cm-bg: #3a4462;
+.dark {
+  --cm-color: #c9c9cf;
+  --cm-bg: rgb(255 255 255 / 6%);
+  --cm-bg-hover: rgb(255 255 255 / 14%);
   --cm-focus: transparent;
 }
 
 .color-switcher {
-  line-height: 0.8;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  right: 20px;
-  top: 25px;
-}
+  cursor: pointer;
 
-.color-switcher button {
+  display: flex;
   align-items: center;
-  background: transparent;
+  justify-content: center;
+
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  max-height: 28px;
+  margin: 8px;
+  padding: 0;
   border: 0;
   border-radius: 6px;
-  box-shadow: none;
-  cursor: pointer;
-  display: flex;
-  height: 32px;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  transition: 0.25s;
-  width: 32px;
-}
 
-.color-switcher button:hover {
   background: var(--cm-bg);
+  box-shadow: none;
+
+  transition: all 0.25s;
+}
+@media not (width >= 480px) {
+  .color-switcher {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    max-height: 36px;
+  }
 }
 
-.color-switcher button:focus,
-.color-switcher button:focus-visible {
-  box-shadow: 0 0 0 2px var(--cm-focus);
+.color-switcher:hover {
+  background: var(--cm-bg-hover);
+}
+
+.color-switcher:focus,
+.color-switcher:focus-visible {
   outline: 0;
+  box-shadow: 0 0 0 2px var(--cm-focus);
 }
 
-.color-switcher button svg {
+.color-switcher svg {
   display: block;
-  height: 20px;
+
+  width: 18px;
+  height: 18px;
   margin: 0;
   padding: 0;
-  width: 20px;
+
   fill: var(--cm-color);
 }
-@media (width >= 480px) {
-  .color-switcher {
-    right: calc(50% - 220px);
-  }
-}
-@media (width >= 768px) {
-  .color-switcher {
-    right: calc(50% - 364px);
-  }
-}
-@media (width >= 1024px) {
-  .color-switcher {
-    right: calc(50% - 492px);
-  }
-}
-@media (width >= 1280px) {
-  .color-switcher {
-    right: calc(50% - 620px);
+@media not (width >= 480px) {
+  .color-switcher svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
-.hidden {
-  display: none !important;
+footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+@media not (width >= 650px) {
+  footer {
+    align-items: start;
+  }
 }

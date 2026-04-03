@@ -1,10 +1,12 @@
 // gulpfile.js
 
-import { dest, src, watch } from 'gulp'
 import { join } from 'path'
 import { cwd } from 'process'
+
+import { dest, src, watch } from 'gulp'
 import { build, createServer, preview } from 'vite'
-import server from './server/index.js'
+
+import { server } from './server/server.js'
 import defineConfig from './vite.config.js'
 
 // vserve

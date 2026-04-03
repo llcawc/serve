@@ -1,16 +1,22 @@
 import { join, resolve } from 'node:path'
+
 import { preview } from 'vite'
+
 const __dirname = resolve()
 
-export default async function server({
-  port,
-  dist,
-  host,
-}: {
+interface ServerOptions {
   port?: number | undefined
   dist?: string | undefined
   host?: string | boolean | undefined
-} = {}) {
+}
+/**
+ * Vite based live server for static files
+ * @param port server port number (default: 3000)
+ * @param dist folder for serve files (default: dist)
+ * @param host listen on all addresses, including LAN and public addresses
+ * @returns Promise void
+ */
+async function server({ port, dist, host }: ServerOptions = {}): Promise<void> {
   if (!port) {
     port = 3000
   }
@@ -47,3 +53,7 @@ export default async function server({
   previewServer.printUrls()
   previewServer.bindCLIShortcuts({ print: true })
 }
+
+// export
+export { server }
+export { type ServerOptions }

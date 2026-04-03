@@ -66,7 +66,7 @@ API / Gulp
 You can programmatically start the local server if you import the server() function from the @pasmurno/serve package:
 
 ```js
-import server from "@pasmurno/serve";
+import { server } from "@pasmurno/serve";
 
 async function browse() {
   await server({
