@@ -1,8 +1,9 @@
 import { join, resolve } from 'node:path'
+import { cwd } from 'node:process'
 
 import { preview } from 'vite'
 
-const __dirname = resolve()
+const __dirname = cwd()
 
 interface ServerOptions {
   port?: number | undefined

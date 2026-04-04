@@ -1,4 +1,4 @@
 // @ts-check
 import '../styles/main.scss'
-import { colorSwitcher } from './colormode'
-document.addEventListener('DOMContentLoaded', colorSwitcher)
+import { schemeSwitcher } from './scheme'
+document.addEventListener('DOMContentLoaded', schemeSwitcher)

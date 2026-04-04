@@ -18,5 +18,5 @@
     "isolatedDeclarations": true
   },
   "include": ["source/*.ts"],
-  "exclude": ["**/*.js", "server/**", "dist/**"]
+  "exclude": ["**/*.js", "server/**", "dist/**", "test/**"]
 }

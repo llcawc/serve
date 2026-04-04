@@ -1,8 +1,9 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 let node_path = require("node:path");
+let node_process = require("node:process");
 let vite = require("vite");
 //#region source/server.ts
-const __dirname$1 = (0, node_path.resolve)();
+const __dirname$1 = (0, node_process.cwd)();
 /**
 * Vite based live server for static files
 * @param port server port number (default: 3000)

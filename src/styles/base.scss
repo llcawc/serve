@@ -89,12 +89,35 @@ hr {
   }
 }
 
+.copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(var(--space) * 3);
+  margin-bottom: calc(var(--space) * 4);
+
+  p {
+    margin: 0;
+  }
+
+  @media (width > 720px) {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+
 .error {
   height: calc(100svh - var(--space) * 10);
   padding-bottom: calc(var(--space) * 20);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .scheme {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+  }
 }
 .e404 {
   display: flex;

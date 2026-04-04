@@ -3,7 +3,7 @@
 import { join } from 'path'
 import { cwd } from 'process'
 
-import { dest, src, watch } from 'gulp'
+import { watch } from 'gulp'
 import { build, createServer, preview } from 'vite'
 
 import { server } from './server/server.js'
@@ -53,12 +53,8 @@ async function viteServe() {
   previewServer.bindCLIShortcuts({ print: true })
 }
 
-function copy() {
-  return src('src/vendor/*').pipe(dest('dist/vendor'))
-}
-
 function watcher() {
   watch('src/**/*', viteBuild)
 }
 
-export { copy, serve, viteBuild, viteDev, viteServe, watcher }
+export { serve, viteBuild, viteDev, viteServe, watcher }

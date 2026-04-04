@@ -5,7 +5,7 @@ import { server } from './server.js'
 type Args = { port: number | undefined; dist: string | undefined; host: string | boolean | undefined }
 
 const program = new Command()
-const ver = '0.0.5'
+const ver = '0.0.6'
 
 const header = `• @pasmurno/serve • ::.. version: ${ver}\nVite based live server for static files\n`
 const footer = '\nMIT License ©2025 pasmurno by llcawc. Made with ❤ to beautiful architecture.'

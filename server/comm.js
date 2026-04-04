@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { server } from './server.js';
 const program = new Command();
-const ver = '0.0.5';
+const ver = '0.0.6';
 const header = `• @pasmurno/serve • ::.. version: ${ver}\nVite based live server for static files\n`;
 const footer = '\nMIT License ©2025 pasmurno by llcawc. Made with ❤ to beautiful architecture.';
 const example = '\nExample call:\n' +

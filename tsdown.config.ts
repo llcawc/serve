@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  entry: ['./source/server.ts'],
+  entry: './source/server.ts',
   format: {
     esm: {
       fixedExtension: false,

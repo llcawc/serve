@@ -1,7 +1,8 @@
-import { join, resolve } from 'path'
+import { join } from 'node:path'
+import { cwd } from 'node:process'
 
 import { defineConfig } from 'vite'
-const __dirname = resolve()
+const __dirname = cwd()
 
 export default defineConfig({
   root: join(__dirname, 'src'),
