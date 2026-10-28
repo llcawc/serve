@@ -1,4 +1,3 @@
-//#region source/server.d.ts
 interface ServerOptions {
   port?: number | undefined;
   dist?: string | undefined;
@@ -11,10 +10,5 @@ interface ServerOptions {
  * @param host listen on all addresses, including LAN and public addresses
  * @returns Promise void
  */
-declare function server({
-  port,
-  dist,
-  host
-}?: ServerOptions): Promise<void>;
-//#endregion
+declare function server({ port, dist, host }?: ServerOptions): Promise<void>;
 export { type ServerOptions, server };

@@ -1,6 +1,6 @@
 {
   "name": "@pasmurno/serve",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Vite based static server for local development",
   "homepage": "https://github.com/llcawc/serve",
   "license": "MIT",
@@ -40,19 +40,19 @@
     "build": "pnpm tsc && tsdown -d ./server --no-clean"
   },
   "dependencies": {
-    "commander": "^14.0.3",
-    "vite": "^8.0.3"
+    "commander": "^15.0.0",
+    "vite": "^8.3.5"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.18",
-    "@types/node": "^25.5.2",
-    "@typescript/native-preview": "7.0.0-dev.20260403.1",
+    "@types/node": "^26.6.5",
+    "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "gulp": "^5.0.1",
-    "oxfmt": "^0.43.0",
-    "oxlint": "^1.58.0",
-    "sass": "^1.99.0",
-    "tsdown": "^0.21.7",
-    "typescript": "^6.0.2",
-    "vitest": "^4.1.2"
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.90.0",
+    "sass": "^1.106.1",
+    "tsdown": "^0.23.3",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
   }
 }

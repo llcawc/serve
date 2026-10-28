@@ -1,7 +1,7 @@
 import { join, resolve } from "node:path";
 import { cwd } from "node:process";
 import { preview } from "vite";
-//#region source/server.ts
+// source/server.ts
 const __dirname = cwd();
 /**
 * Vite based live server for static files
@@ -30,5 +30,4 @@ async function server({ port, dist, host } = {}) {
 	previewServer.printUrls();
 	previewServer.bindCLIShortcuts({ print: true });
 }
-//#endregion
 export { server };

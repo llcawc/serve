@@ -1,8 +1,7 @@
 import { join } from 'node:path'
-import { cwd } from 'node:process'
 
 import { defineConfig } from 'vite'
-const __dirname = cwd()
+const __dirname = import.meta.dirname
 
 export default defineConfig({
   root: join(__dirname, 'src'),

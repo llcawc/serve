@@ -1,13 +1,14 @@
 // gulpfile.js
 
 import { join } from 'path'
-import { cwd } from 'process'
 
 import { watch } from 'gulp'
 import { build, createServer, preview } from 'vite'
 
 import { server } from './server/server.js'
 import defineConfig from './vite.config.js'
+
+const __dirname = import.meta.dirname
 
 // vserve
 async function serve() {
@@ -34,7 +35,7 @@ async function viteBuild() {
 
 // vite preview
 async function viteServe() {
-  const dist = join(cwd(), 'dist')
+  const dist = join(__dirname, 'dist')
   const previewServer = await preview({
     // any valid user config options, plus `mode` and `configFile`
     mode: 'development',
